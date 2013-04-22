@@ -11,14 +11,27 @@
           %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
 .hero-unit  
   %h1#logo #{@app.name}
-  %p
+  %h2 
+    = Thesaurus.getSentences(1)
+  %p 
+    = Thesaurus.getSentences(3)
   %p
     %a{:class=>"btn btn-primary btn-large"} Check out the Data!
 .navi
 .row-fluid
   .span4
+    %h4
+      = Thesaurus.getSentences(1)
+    %p 
+      = Thesaurus.getSentences(3)
     %a{:class=>"btn btn-primary", :href=> "/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .span4  
+    %h4
+      = Thesaurus.getSentences(1)
+    %p 
+      = Thesaurus.getSentences(4)
     %a{:class=>"btn btn-primary", :href=>"/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
   .span4
+    %p 
+      = Thesaurus.getSentences(3)
     %a{:class=>"btn btn-info", :href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}

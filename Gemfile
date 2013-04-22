@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'rake'
 gem 'multi_json'
+gem 'yajl-ruby'
 
 gem 'redis'
 gem 'redis-objects'

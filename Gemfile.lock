@@ -68,6 +68,7 @@ GEM
       raindrops (~> 0.7)
     vegas (0.1.11)
       rack (>= 1.0.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -87,3 +88,4 @@ DEPENDENCIES
   sinatra-contrib
   tux
   unicorn
+  yajl-ruby

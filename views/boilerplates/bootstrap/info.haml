@@ -12,4 +12,10 @@
           %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
 %h1 about us
 %p #{@about_page.getDataDescription}
+%p
+  =Thesaurus::getParagraphs(1)
+%p
+  =Thesaurus::getParagraphs(1)
+%p
+  =Thesaurus::getSentences(1)
 
