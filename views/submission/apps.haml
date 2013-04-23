@@ -2,8 +2,8 @@
   %h1 welcome to appgen
   .row-fluid
     .span4
-      = HTTParty.get("http://bigappgen.herokuapp.com",{:query=>{:seed=> 5}})
+      = HTTParty.get("http://bigappgen.herokuapp.com",{})
     .span4
-      .iframe{:src=>"http://bigappgen.herokuapp.com"}
+      = HTTParty.get("http://bigappgen.herokuapp.com",{})
     .span4
-      .iframe{:src=>"/?seed=5"}
+      = HTTParty.get("http://bigappgen.herokuapp.com",{})
