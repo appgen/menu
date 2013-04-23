@@ -2,8 +2,8 @@
   %h1 welcome to appgen
   .row-fluid
     .span4
-      .iframe{:src=>"/?seed=5", :styles=>"height: 200px;"}
+      = HTTParty.get("http://bigappgen.herokuapp.com",{:query=>{:seed=> 5}})
     .span4
-      .iframe{:src=>"/?seed=5"}
+      .iframe{:src=>"http://bigappgen.herokuapp.com"}
     .span4
       .iframe{:src=>"/?seed=5"}

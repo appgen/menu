@@ -36,10 +36,10 @@ class BigApp < Sinatra::Application
     @app = FakeApp.new
   end
 
-  after do
-    pass if request.path_info.include? "submit"
-    response['Server'] = @app.server
-  end
+  #after do
+  #  pass if request.path_info.include? "submit"
+  #  response['Server'] = @app.server
+  #end
 
   get '/' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml"), :layout => :app_layout
