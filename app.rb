@@ -26,6 +26,7 @@ class BigApp < Sinatra::Application
   end
 
   before do
+    pass if request.path_info.include? "submit"
     @seed = if params[:seed]
       params[:seed].to_i
     else
@@ -36,23 +37,24 @@ class BigApp < Sinatra::Application
   end
 
   after do
+    pass if request.path_info.include? "submit"
     response['Server'] = @app.server
   end
 
   get '/' do
-    haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml")
+    haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml"), :layout => :app_layout
   end
 
   get '/map' do
-    haml File.read("views/boilerplates/#{@app.boilerplate}/map.haml")
+    haml File.read("views/boilerplates/#{@app.boilerplate}/map.haml"), :layout => :app_layout
   end
 
   get '/info' do
-    haml File.read("views/boilerplates/#{@app.boilerplate}/info.haml")
+    haml File.read("views/boilerplates/#{@app.boilerplate}/info.haml"), :layout => :app_layout
   end
 
   get '/contact' do
-    haml File.read("views/boilerplates/#{@app.boilerplate}/contact.haml")
+    haml File.read("views/boilerplates/#{@app.boilerplate}/contact.haml"), :layout => :app_layout
   end
 
   get "/stylesheet.css" do
@@ -62,6 +64,10 @@ class BigApp < Sinatra::Application
 
   get "/bootstrap.css" do
     File.readbootstrap.css
+  end
+
+  get "/submit" do
+    haml File.read("views/submission/index.haml"), :layout => :admin_layout
   end
 
   def partial(haml_file)

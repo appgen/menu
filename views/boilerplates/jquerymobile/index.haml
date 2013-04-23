@@ -1,7 +1,9 @@
 .hero-unit  
   %h1#logo #{@app.name}
+  %h2  
+    = Thesaurus.getSentences(1)
   %p
-  %p
+    = Thesaurus.getSentences(3)
     %a{:class=>"btn btn-primary btn-large"} Check out the Data!
 %div{:data=>{:role=>"content"}}
   .span4
