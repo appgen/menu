@@ -4,6 +4,12 @@
   %h1#logo #{@app.name}
 %h1 about us
 %p #{@about_page.getDataDescription}
+%p
+  =Thesaurus::getParagraphs(1)
+%p
+  =Thesaurus::getParagraphs(1)
+%p
+  =Thesaurus::getSentences(1)
 %div{:data=>{:role=>"footer", :theme=>"#{@app.jquerytheme}"}}
   %div{:data=>{:role=>"navbar", :theme=>"#{@app.jquerytheme}"}}
     %ul
