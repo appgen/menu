@@ -1,12 +1,17 @@
+- 3.times do
+-  appNum = rand(1000)
+  .span4#app
+    %iframe#frame{:src=>"http://localhost:9393/?seed=#{appNum}"}
+    %a.btn.btn-success{:href=>"#"} Select
+- end
+
 .hero-unit
   %h1 welcome to appgen
   .row-fluid
     %h2.span8 select an app from below:
     %a.span4.btn{:href=>"#"} See more choices
   .row-fluid#apps
-    .span4#app
-      %iframe#frame{:src=>"http://localhost:9393/"}
-      %a.btn.btn-success{:href=>"#"} Select
+
     .span4#app
       %iframe#frame{:src=>"http://localhost:9393/"}
       %a.btn.btn-success{:href=>"#"} Select
