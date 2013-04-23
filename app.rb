@@ -70,6 +70,10 @@ class BigApp < Sinatra::Application
     haml File.read("views/submission/index.haml"), :layout => :admin_layout
   end
 
+  get "/submit/apps" do
+    haml File.read("views/submission/apps.haml"), :layout => :admin_layout
+  end
+
   def partial(haml_file)
     haml haml_file, :layout => false
   end
