@@ -8,7 +8,10 @@ class FakeApp
   TILE_LAYERS = ["'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'OpenStreetMap'}",
                   "'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {subdomains: '1234', type: 'osm', attribution: 'MapQuestOpen'}",
                   "'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {subdomains: '1234', type: 'sat', attribution: 'MapQuestOpen'}",
-                  '"http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png", {attribution: "OpenCycleMap"}'
+                  '"http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png", {attribution: "OpenCycleMap"}',
+                  "'http://tile.stamen.com/toner/{z}/{x}/{y}.png', {attribution: 'Stamen Toner'}",
+                  "'http://tile.stamen.com/watercolor/{z}/{x}/{y}.png', {attribution: 'Stamen Watercolor'}",
+                  "'http://tile.stamen.com/terrain/{z}/{x}/{y}.png', {attribution: 'Stamen Terrain'}"
   ]
   SERVERS = [
     "Server:Apache/2.2.14 (Unix) mod_ssl/2.2.14 OpenSSL/0.9.8e-fips-rhel5 DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635",
