@@ -1,15 +1,5 @@
 - @map_page = MapPresenter.new(@app.dataset)
-%header
-  %div{:class=>"#{@app.navbar}"}
-    .navbar-inner
-      %a.brand#logo{:href=>"/?seed=#{@seed}"} #{@app.name}
-      %ul.nav
-        %li
-          %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
-        %li
-          %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
-        %li
-          %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+= partial("views/boilerplates/bootstrap/_nav.haml")
 #map
   :javascript
     var map = L.map('map');

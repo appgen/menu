@@ -1,0 +1,11 @@
+%header
+  %div{:class=>"#{@app.navbar}"}
+    .navbar-inner
+      %a.brand#logo{:href=>"/a/?seed=#{@seed}"} #{@app.name}
+      %ul.nav
+        %li
+          %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+        %li
+          %a{:href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+        %li
+          %a{:href=>"/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map

@@ -1,14 +1,5 @@
 - @map_page = MapPresenter.new(@app.dataset)
-%header
-  %a{:href=>"/?seed=#{@seed}"}
-    %h1#logo #{@app.name}
-  %ul#menu
-    %li
-      %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
-    %li
-      %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
-    %li.k-state-active
-      %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+= partial("views/boilerplates/kendoui/_nav.haml")
 #map
   :javascript
     var map = L.map('map');
@@ -38,6 +29,6 @@
     ).addTo(map);
 %div{:data=>{:role=>"footer"}}
   %div{:data=>{:role=>"tabstrip"}}
-    %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
-    %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
-    %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+    %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %a{:href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %a{:href=>"/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map

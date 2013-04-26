@@ -41,23 +41,23 @@ class BigApp < Sinatra::Application
   #  response['Server'] = @app.server
   #end
 
-  get '/' do
+  get '/a' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml"), :layout => :app_layout
   end
 
-  get '/map' do
+  get '/a/map' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/map.haml"), :layout => :app_layout
   end
 
-  get '/info' do
+  get '/a/info' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/info.haml"), :layout => :app_layout
   end
 
-  get '/contact' do
+  get '/a/contact' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/contact.haml"), :layout => :app_layout
   end
 
-  get "/stylesheet.css" do
+  get "/a/stylesheet.css" do
     response['Content-Type'] = 'text/css'
     erb File.read("views/boilerplates/#{@app.boilerplate}/stylesheet.erb")
   end
@@ -75,6 +75,6 @@ class BigApp < Sinatra::Application
   end
 
   def partial(haml_file)
-    haml haml_file, :layout => false
+    haml File.read(haml_file), :layout => false
   end
 end

@@ -1,19 +1,5 @@
 - @map_page = MapPresenter.new(@app.dataset)
-%nav{:class=>"top-bar"}
-  %ul{:class=>"title-area"}
-    %li.name
-      %a.brand#logo{:href=>"/?seed=#{@seed}"} #{@app.name}
-    %li{:class=>"toggle-topbar menu-icon"}
-      %a{:href=>"#"} Menu
-  %section{:class=>"top-bar-section"}
-    %ul.right
-      %li.divider
-      %li
-        %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
-      %li
-        %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
-      %li
-        %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+= partial("views/boilerplates/foundation/_nav.haml")
 #map
   :javascript
     var map = L.map('map');

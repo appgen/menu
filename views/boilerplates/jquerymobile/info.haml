@@ -1,6 +1,6 @@
 - @about_page = AboutPresenter.new(@app.dataset)
 %div{:data=>{:role=>"header", :theme=>"#{@app.jquerytheme}"}}
-  %a{:href=>"/?seed=#{@seed}"} Home
+  %a{:href=>"/a/?seed=#{@seed}"} Home
   %h1#logo #{@app.name}
 %h1 about us
 %p #{@about_page.getDataDescription}
@@ -14,8 +14,8 @@
   %div{:data=>{:role=>"navbar", :theme=>"#{@app.jquerytheme}"}}
     %ul
       %li
-        %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+        %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
       %li
-        %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+        %a{:href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
       %li
-        %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+        %a{:href=>"/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map

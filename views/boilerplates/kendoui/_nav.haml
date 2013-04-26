@@ -1,0 +1,10 @@
+%header
+  %a{:href=>"/a/?seed=#{@seed}"}
+    %h1#logo #{@app.name}
+  %ul#menu
+    %li
+      %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %li.k-state-active
+      %a{:href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %li
+      %a{:href=>"/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map

@@ -1,18 +1,4 @@
-%nav{:class=>"top-bar"}
-  %ul{:class=>"title-area"}
-    %li.name
-      %a.brand#logo{:href=>"/?seed=#{@seed}"} #{@app.name}
-    %li{:class=>"toggle-topbar menu-icon"}
-      %a{:href=>"#"} Menu
-  %section{:class=>"top-bar-section"}
-    %ul.right
-      %li.divider
-      %li
-        %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
-      %li
-        %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
-      %li
-        %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+= partial("views/boilerplates/foundation/_nav.haml")
 .panel.callout
   %h1#logo #{@app.name}
   %h2.subheader 
@@ -24,16 +10,16 @@
       = Thesaurus.getSentences(1)
     %p 
       = Thesaurus.getSentences(3)
-    %a{:class=>"button", :href=> "/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+    %a{:class=>"button", :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .small-4.columns.panel
     %h4
       = Thesaurus.getSentences(1)
     %p 
       = Thesaurus.getSentences(3)
-    %a{:class=>"button", :href=>"/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %a{:class=>"button", :href=>"/a/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
   .small-4.columns.panel
     %h4
       = Thesaurus.getSentences(1)
     %p 
       = Thesaurus.getSentences(3)
-    %a{:class=>"button", :href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %a{:class=>"button", :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}

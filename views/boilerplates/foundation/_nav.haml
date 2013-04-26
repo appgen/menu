@@ -1,0 +1,15 @@
+%nav{:class=>"top-bar"}
+  %ul{:class=>"title-area"}
+    %li.name
+      %a.brand#logo{:href=>"/a/?seed=#{@seed}"} #{@app.name}
+    %li{:class=>"toggle-topbar menu-icon"}
+      %a{:href=>"#"} Menu
+  %section{:class=>"top-bar-section"}
+    %ul.right
+      %li.divider
+      %li
+        %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+      %li
+        %a{:href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+      %li
+        %a{:href=>"/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map

@@ -1,14 +1,4 @@
-%header
-  %div{:class=>"#{@app.navbar}"}
-    .navbar-inner
-      %a.brand#logo{:href=>"/?seed=#{@seed}"} #{@app.name}
-      %ul.nav
-        %li
-          %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
-        %li
-          %a{:href=>"/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
-        %li
-          %a{:href=>"/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+= partial("views/boilerplates/bootstrap/_nav.haml")
 .hero-unit  
   %h1#logo #{@app.name}
   %h2 
@@ -24,14 +14,14 @@
       = Thesaurus.getSentences(1)
     %p 
       = Thesaurus.getSentences(3)
-    %a{:class=>"btn btn-primary", :href=> "/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+    %a{:class=>"btn btn-primary", :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .span4  
     %h4
       = Thesaurus.getSentences(1)
     %p 
       = Thesaurus.getSentences(4)
-    %a{:class=>"btn btn-primary", :href=>"/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %a{:class=>"btn btn-primary", :href=>"/a/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
   .span4
     %p 
       = Thesaurus.getSentences(3)
-    %a{:class=>"btn btn-info", :href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %a{:class=>"btn btn-info", :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
