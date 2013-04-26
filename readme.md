@@ -7,15 +7,14 @@ $ bundle install
 $ bundle exec shotgun
 ```
 
+Then visit...
+http://localhost:9393/
+
 #Production
   * http://bigappgen.herokuapp.com
   * To login (not working yet): /submit
   * To browse apps: /submit/apps
 
-
-
-Then visit...
-http://localhost:9393/
 
 ## Important details
 
