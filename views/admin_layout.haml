@@ -3,74 +3,32 @@
   %head
     %link{:rel => 'stylesheet', :type => 'text/css', :href => "/css/bootstrap/bootstrap.css"}
     :javascript
-      function initElement() {
-        var a = document.getElementById("fb");
-        a.onclick = login();
-      };
-    :css
-      #frame {
-      width: 800px;
-      height: 600px;
-      border: none;
-      -moz-transform: scale(0.4);
-      -moz-transform-origin: 0 0;
-      -o-transform: scale(0.4);
-      -o-transform-origin: 0 0;
-      -webkit-transform: scale(0.4);
-      -webkit-transform-origin: 0 0;
-      margin-bottom: -350px;
-      }
-  %body
-    :javascript
 
-      window.fbAsyncInit = function() {
+      //asynch FB loading
+
+      window.fbAsyncInit = function () {
         FB.init({
-          appId      : 509052085822262, // App ID
-          channelUrl : '//bigappgen.herokuapp.com/submit/channel.html', // Channel File
-          status     : true, // check login status
-          cookie     : true, // enable cookies to allow the server to access the session
-          xfbml      : true  // parse XFBML
+          appId: '182489518521691', cookie: true,
+          status: true, oauth: true, xfbml: true, channelUrl: 'http://collabfinder.com/channel.html'
         });
-
-        // Additional init code here
-        FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-          // connected
-          } else if (response.status === 'not_authorized') {
-          // not_authorized
-            login();
-          } else {
-          // not_logged_in
-            login();
-          }
+        FB.getLoginStatus(function (response) {
+          //FB.Event.subscribe('auth.statusChange', Collab.Login.onStatus); // every status change
+          //FB.Event.subscribe( 'auth.login', Collab.Login2.loginAuthCallback );
         });
       };
 
-      function login() {
-        FB.login(function(response) {
-          if (response.authResponse) {
-            // connected
-              testAPI();
-          } else {
-             // cancelled
-          }
-        });
-      }
-
-      function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-          console.log('Good to see you, ' + response.name + '.');
-        });
-      }
-
-      // Load the SDK Asynchronously
-      (function(d){
+      (function (d) {
         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
+        if (d.getElementById(id)) {
+        return;
+        }
+
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
         js.src = "//connect.facebook.net/en_US/all.js";
         ref.parentNode.insertBefore(js, ref);
       }(document));
+
     .container-fluid
       =yield

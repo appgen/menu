@@ -1,5 +1,9 @@
 AppGen: Menu
 ===
+Hosted on Heroku: http://bigappgen.herokuapp.com
+To login (not working yet): http://bigappgen.herokuapp.com/submit
+To browse apps: http://bigappgen.herokuapp.com/submit/apps
+
 I propose these routes
 
     /
