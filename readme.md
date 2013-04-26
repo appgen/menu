@@ -1,15 +1,18 @@
 AppGen: Menu
 ===
-    Hosted on Heroku: http://bigappgen.herokuapp.com
-    To login (not working yet): http://bigappgen.herokuapp.com/submit
-    To browse apps: http://bigappgen.herokuapp.com/submit/apps
-
 ## How to
 To start webapp
 ```
 $ bundle install
 $ bundle exec shotgun
 ```
+
+#Production
+  * http://bigappgen.herokuapp.com
+  * To login (not working yet): /submit
+  * To browse apps: /submit/apps
+
+
 
 Then visit...
 http://localhost:9393/
