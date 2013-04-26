@@ -1,6 +1,6 @@
 - @about_page = AboutPresenter.new(@app.dataset)
 %div{:data=>{:role=>"header", :theme=>"#{@app.jquerytheme}"}}
-  %a{:href=>"/a/?seed=#{@seed}"} Home
+  %a{:href=>"/a?seed=#{@seed}"} Home
   %h1#logo #{@app.name}
 %h1 about us
 %p #{@about_page.getDataDescription}

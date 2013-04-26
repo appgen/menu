@@ -1,6 +1,6 @@
 - @map_page = MapPresenter.new(@app.dataset)
 %div{:data=>{:role=>"header", :theme=>"#{@app.jquerytheme}"}}
-  %a{:href=>"/a/?seed=#{@seed}"} Home
+  %a{:href=>"/a?seed=#{@seed}"} Home
   %h1#logo #{@app.name}
 #map
   :javascript
