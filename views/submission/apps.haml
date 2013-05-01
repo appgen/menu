@@ -1,15 +1,18 @@
-.hero-unit
-  %h1 welcome to appgen
-  .row-fluid
-    %h2.span8 select an app from below:
-    %a.span4.btn{:href=>""} See more choices
+.span12.funnybutton.right
+  %a.button{:href=>"", :class=>"button"} Refresh
+.hello
+  %h1 WELCOME TO APPGEN
+  %h2 select an app from below:
   .row-fluid#apps
     .span4#app
       %iframe#frame{:src=>"/a"}
-      %a.btn.btn-success{:href=>"#"} Select
+      .funnybutton
+        %a{:href=>"#", :class=>"button"} Select
     .span4#app
       %iframe#frame{:src=>"/a"}
-      %a.btn.btn-success{:href=>"#"} Select
+      .funnybutton
+        %a{:href=>"#", :class=>"button"} Select
     .span4#app
       %iframe#frame{:src=>"/a"}
-      %a.btn.btn-success{:href=>"#"} Select
+      .funnybutton
+        %a{:href=>"#", :class=>"button"} Select

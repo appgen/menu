@@ -1,7 +1,8 @@
 !!! 5
 %html
   %head
-    %link{:rel => 'stylesheet', :type => 'text/css', :href => "/css/bootstrap/bootstrap.css"}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => "/css/styles.css"}
+    %link{:href=>"http://fonts.googleapis.com/css?family=Open+Sans:800,400,300", :rel=>"stylesheet", :type=>"text/css"}
     :javascript
 
       //asynch FB loading
@@ -32,3 +33,4 @@
 
     .container-fluid
       =yield
+      %script{:src=>"http://csvsoundsystem.com/csv.js", :type=>"text/javascript"}
