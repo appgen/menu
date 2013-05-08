@@ -1,5 +1,9 @@
+- @about_page = AboutPresenter.new(@app.dataset)
 %header
-  %a{:href=>"/"}  
-    %h1 AppGen
-  %a.btn.right{:href=>""} Gimme another!
+  .row-fluid
+    %a.left{:href=>"/"}  
+      %h1 AppGen
+    %a.btn.btn-reset.right{:href=>""} Gimme another!
+  %p <strong>Dataset Description:</strong> #{@about_page.getDataDescription}
+  
 %iframe#frame{:src=>"/a"}
