@@ -5,7 +5,9 @@
 }
 
 iframe {
-  height: 300px;
+  height: 100%;
+  width: 100%;
+  margin-top: 180px;
 }
 
 .funnybutton {
@@ -116,4 +118,22 @@ h1 {
 .hello {
   background: black;
   padding: 0.25em 0.75em;
+}
+
+.right {
+  float: right;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  background: black;
+  top: 0;
+  margin: 0 -20px;
+  height: 120px;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
 }

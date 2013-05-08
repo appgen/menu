@@ -70,6 +70,10 @@ class BigApp < Sinatra::Application
     haml :splash, :layout => :admin_layout
   end
 
+    get "/browse" do
+    haml :browse, :layout => :admin_layout
+  end
+
   def partial(haml_file)
     haml File.read(haml_file), :layout => false
   end
