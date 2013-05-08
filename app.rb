@@ -66,6 +66,10 @@ class BigApp < Sinatra::Application
     File.readbootstrap.css
   end
 
+  get "/" do
+    haml :splash, :layout => :admin_layout
+  end
+
   get "/submit" do
     haml File.read("views/submission/index.haml"), :layout => :admin_layout
   end

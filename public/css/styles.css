@@ -1,11 +1,20 @@
 #app {
   overflow: visible;
   height: auto;
+  text-align: right; 5815812
+}
+
+iframe {
+  height: 300px;
 }
 
 .funnybutton {
   max-width: 600px;
   margin: 4em auto; 
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -43,6 +52,12 @@ h1, h2 {
 
 h1 {
   font-weight: 800;
+}
+
+.bigtitle {
+  font-weight: 800;
+  font-size: 600%;
+  color: black;
 }
 
 .container-fluid {

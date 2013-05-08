@@ -1,0 +1,15 @@
+%h1.bigtitle AppGen
+#fb-root
+.connect
+  %a#fb.btn.btn-primary.btn-large{:href=>"#"} login with facebook
+  %a.btn.btn-success.btn-large{:href=>"/submit/apps"} browse apps
+.abstract
+  %p AppGen is a rapid prototyping tool that allows one to browse the superset of open civic datasets in the form of standalone, fully functional and branded web applications. It takes all the datasets from the NYC Data Portal, analyzes them to find stochastic linkages, merges disparate datasets, visualizes them in the form of standalone apps, writes product copy and composes a visual brand. 
+  %p We think it has value in a Sokal hoax kind of way, as an invective against the redundancy of civic applications and arbitrariness of hackathon judging. But additionally, because it uniquely targets the superset of civic data, it could be used to gather analytics on the join-ability/usability/hack-ability of specific open datasets in relation to each other, and through this quantification, serve as an assessment tool re: the success/failure of any govt/dept's open data efforts.
+.contact
+  %ul
+    %li tom levine, data scientist
+    %li ashley williams, ruby developer
+    %li david riordan, evangelist
+  %br/
+  <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
