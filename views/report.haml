@@ -16,5 +16,5 @@
     %ul
       - superset["datasets"].each do |set|
         %li
-          = set["id"] + " " + set["name"]
-
+          %a{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
+            = set["name"]
