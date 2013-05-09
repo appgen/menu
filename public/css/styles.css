@@ -145,4 +145,15 @@ a {
   text-decoration: none;
 }
 
-btn-reset
+section {
+  margin: 10px;
+}
+
+.subtitle {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}

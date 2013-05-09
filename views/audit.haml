@@ -1,0 +1,34 @@
+%a{:href=>"/"}
+  %h2.btn << AppGen
+
+%h1.bigtitle NYC open dataset audit
+
+%p NYC has made major strides in government transparency by providing a substantial number of public datasets in a machine readable format through the NYC open data portal. In theory, this initiative should improve the accessibility and accountability of City government.
+%p NYC claims that "Anyone can use these data sets to participate in and improve government by conducting research and analysis or creating applications, thereby gaining a better understanding of the services provided by City agencies and improving the lives of citizens and the way in which government serves them.", however this claim is currently immune from assessment. Data
+%p In the process of building our civic technology rapid-prototyping tool, AppGen, we discovered that we Because AppGen targets the superset of NYC's open datasets, we have the unique access and perspective to assess the quality of each dataset as it relates to the superset, providing a score.
+%p To this end we have compiled a set of Dataset Best Practices as well as Critical Questions that creators and maintainers of datasets should be asking themselves when the open up a dataset on the NYC Data Portal.
+
+%section
+  %h2.subtitle Dataset Best Practices
+  %ul
+    %li Columns should be appropriately typed
+    %li Datasets should not be tagged with terms that describe the content, not the form
+    %li Dataset descriptions should not contain metadata, specifically: update frequency
+    %li Dataset should be in raw, un-aggregated, un-subsetted form
+    %li Datasets should be in a long format rather than in wide format
+    %li Downloads shouldn't be prohibitively slow
+    %li Maps and datasets should be the same concept
+    %li Titles should describe the dataset
+    %li Words should be spelled  correctly
+%section
+  %h2.subtitle Critical Questions
+  %ul
+    %li Who updates which datasets?
+    %li Which departments do the datasets come from?
+    %li How big are the datasets (in rows, columns, and bytes)?
+    %li Which DoITT employees and data sources are best/worst?
+    %li How joinable are datasets?
+    %li How unionable are datasets?
+    %li What explains variation in dataset quality?
+
+%h2  
