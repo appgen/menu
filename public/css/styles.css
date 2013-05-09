@@ -157,3 +157,9 @@ section {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.supset {
+  border: black 2px dotted;
+  margin: 20px;
+  padding: 20px;
+}
