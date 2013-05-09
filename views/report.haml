@@ -10,11 +10,14 @@
   .supset
     %h1 
       =superset["title"]
-    %p Shared schema:
-    %code
-      = superset["schema"]
-    %ul
-      - superset["datasets"].each do |set|
+    .hidden{ :style => 'display: none;'} 
+      %p Shared schema:
+      %code
+        = superset["schema"]
+      %ul
+        - superset["datasets"].each do |set|
         %li
           %a{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
             = set["name"]
+
+%script{ :src => "http://code.jquery.com/jquery-1.9.1.min.js" }
