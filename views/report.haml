@@ -1,0 +1,17 @@
+- myAudit = Audit.new
+%a{:href=>"/"}
+  %h2.btn << AppGen
+
+%h1.bigtitle NYC open dataset audit
+
+%a.btn{:href=>"/audit/report"} About
+
+- myAudit.json_obj.each do |superset|
+  .supset
+    %h1 
+      =superset["title"]
+    %ul
+      - superset["datasets"].each do |set|
+        %li
+          = set["id"] + " " + set["name"]
+

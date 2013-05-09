@@ -78,6 +78,10 @@ class BigApp < Sinatra::Application
     haml :audit, :layout => :admin_layout
   end
 
+  get "/audit/report" do
+    haml :report, :layout => :admin_layout
+  end
+
   def partial(haml_file)
     haml File.read(haml_file), :layout => false
   end
