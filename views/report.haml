@@ -10,19 +10,19 @@
   %h2.subtitle First steps
   %p At the <a href="http://projectconnect.org" target="_blank" class="highlight">Project: Connect</a> hackathon, we start addressing a few of these issues. We looked for datasets that were similarly formatted and thus easy to combine. (More technically, we looked for datasets with the same schema, which could be unioned.)
   %p There are 1238 datasets in the <a href="https://nycopendata.socrata.com" target="_blank" class="highlight">NYC open data portal</a>. Of these, 749 are already formatted such that could be combined with each other to produce fuller, richer datasets. If we were to combine these 749 datasets, they would produce the 152 datasets that are visualized below.
-
+- i = 0;
 - myAudit.json_obj.each do |superset|
   .supset
+    %a{:href=>"javascript:toggleDiv('#{i}');"} Expand
     %h2.subtitle 
       =superset["title"]
-    .hidden{ :style => 'display: none;'} 
+    .hidden{:style => 'display: none;', :id=> "#{i}"} 
       %p Shared schema:
       %code
         = superset["schema"]
+      - i = i + 1
       %ul
         - superset["datasets"].each do |set|
-        %li
-          %a{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
-            = set["name"]
-
-%script{ :src => "http://code.jquery.com/jquery-1.9.1.min.js" }
+          %li
+            %a{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
+              = set["name"]

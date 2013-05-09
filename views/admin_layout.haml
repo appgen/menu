@@ -3,6 +3,7 @@
   %head
     %link{:rel => 'stylesheet', :type => 'text/css', :href => "/css/styles.css"}
     %link{:href=>"http://fonts.googleapis.com/css?family=Open+Sans:800,400,300", :rel=>"stylesheet", :type=>"text/css"}
+    %script{:src => "http://code.jquery.com/jquery-1.9.1.min.js", :type=>"text/javascript"}
     :javascript
       window.fbAsyncInit = function() {
       FB.init({
@@ -40,6 +41,10 @@
       FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
       });
+      }
+
+      function toggleDiv(divId) {
+        $("#"+divId).toggle();
       }
 
     .container-fluid
