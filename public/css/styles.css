@@ -163,3 +163,8 @@ section {
   margin: 20px;
   padding: 20px;
 }
+
+.expand {
+  float: right;
+  font-weight: 300;
+}
