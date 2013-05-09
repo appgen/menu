@@ -2,7 +2,7 @@
 %a{:href=>"/"}
   %h2.btn << AppGen
 
-%h1.bigtitle NYC open dataset audit
+%h1.bigtitle Example Audit: Unionability
 
 %a.btn{:href=>"/audit"} About
 
@@ -13,7 +13,7 @@
 
 - myAudit.json_obj.each do |superset|
   .supset
-    %h1 
+    %h2.subtitle 
       =superset["title"]
     %p Shared schema:
     %code
