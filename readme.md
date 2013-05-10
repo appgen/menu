@@ -11,9 +11,9 @@ Then visit...
 http://localhost:9393/
 
 #Production
-  * http://bigappgen.herokuapp.com
-  * To login (not working yet): /submit
-  * To browse apps: /submit/apps
+  * http://appgen.me (via appgen.herokuapp.com, mirrored at bigappgen.herokuapp.com)
+  * To browse apps: /browse/a
+  * NYC Open Data Portal Audit: /audit
 
 
 ## Important details

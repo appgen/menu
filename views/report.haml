@@ -24,5 +24,9 @@
       %ul
         - superset["datasets"].each do |set|
           %li
-            %a{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
+            %a.set{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
               = set["name"]
+            %p.attribution 
+              = set["attribution"]
+              = "," 
+              = set["uploader"]

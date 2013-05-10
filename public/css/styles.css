@@ -168,3 +168,11 @@ section {
   float: right;
   font-weight: 300;
 }
+
+.attribution {
+  line-height: 1em;
+}
+
+.set {
+  font-weight: 800;
+}
