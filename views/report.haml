@@ -12,11 +12,11 @@
   %p There are 1238 datasets in the <a href="https://nycopendata.socrata.com" target="_blank" class="highlight">NYC open data portal</a>. Of these, 749 are already formatted such that could be combined with each other to produce fuller, richer datasets. If we were to combine these 749 datasets, they would produce the 152 datasets that are visualized below.
 - i = 0
 - myAudit.json_obj.each do |superset|
-  .supset
-    %a.highlight.expand{:href=>"javascript:toggleDiv('#{i}');"} expand
+  .supset{:id=> "#{i}"}
+    %a.highlight.expand{:href=>"javascript:toggleDiv('#{i.to_s + i.to_s}');"} expand
     %h2.subtitle 
       =superset["title"]
-    .hidden{:style => 'display: none;', :id=> "#{i}"} 
+    .hidden{:style => 'display: none;', :id=> "#{i.to_s + i.to_s}"} 
       %p Shared schema:
       %code
         = superset["schema"]
@@ -30,3 +30,5 @@
               = set["attribution"]
               = "," 
               = set["uploader"]
+    %a{:href=>"https://twitter.com/share", :class=>"twitter-share-button", :data=>{:text=>"@nycDoITT why spread this table across multiple datasets? #{superset["title"]} visit http://appgen.me/audit/report##{i}"}}Tweet
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
