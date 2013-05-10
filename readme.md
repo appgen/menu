@@ -13,6 +13,7 @@ http://localhost:9393/
 #Production
   * http://appgen.me (via appgen.herokuapp.com, mirrored at bigappgen.herokuapp.com)
   * To browse apps: /browse/a
+  * Standalone apps: /a
   * NYC Open Data Portal Audit: /audit
 
 
