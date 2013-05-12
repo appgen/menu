@@ -21,15 +21,15 @@
       = dept
       %div.count{:style=>"width: #{num*5}px; background:black; color: black;" } .
 - myAudit.json_obj.each_with_index do |superset, index|
-  .supset
-    %a.highlight.expand{:href=>"javascript:toggleDiv('#{index}');"} expand
+  .supset{:id=>"#{index}"}
+    %a.highlight.expand{:href=>"javascript:toggleDiv('#{'s'+index.to_s}');"} expand
     %p
       =superset["datasets"][0]["attribution"]
     %h2.subtitle 
       =superset["title"]
     %p 
       =superset["datasets"].count
-    .hidden{:style => 'display: none;', :id=>"#{index}"} 
+    .hidden{:style => 'display: none;', :id=>"#{'s'+index.to_s}"} 
       %p Shared schema:
       %code
         = superset["schema"]
