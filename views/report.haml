@@ -12,9 +12,18 @@
   %p There are 1238 datasets in the <a href="https://nycopendata.socrata.com" target="_blank" class="highlight">NYC open data portal</a>. Of these, 749 are already formatted such that could be combined with each other to produce fuller, richer datasets. If we were to combine these 749 datasets, they would produce the 152 datasets that are visualized below.
 %section
   %h2.subtitle There are <span class="highlight">#{myAudit.json_obj.count} potential supersets</span> that could be formed by unioning datasets that share the same schema
+
+%section 
+  %ul
+  %h2.subtitle Offending Depts
+  -myAudit.departments.each do |dept|
+    %li
+      = dept
 - myAudit.json_obj.each_with_index do |superset, index|
   .supset
     %a.highlight.expand{:href=>"javascript:toggleDiv('#{index}');"} expand
+    %p
+      =superset["datasets"][0]["attribution"]
     %h2.subtitle 
       =superset["title"]
     %p 
@@ -29,6 +38,4 @@
             %a.set{:href => 'https://data.cityofnewyork.us/-/-/' + set["id"]}
               = set["name"]
             %p.attribution 
-              = set["attribution"]
-              = "," 
               = set["uploader"]
