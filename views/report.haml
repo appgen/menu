@@ -17,10 +17,17 @@
   %ul
   %h2.subtitle Offending Depts
   -myAudit.departments.each do |dept, num|
+    - ds_count = myAudit.datasets(dept)
+    - avg_ds = 1
+    - avg_ds = num / ds_count unless ds_count == 0
     %li
       = dept
-      %div.count{:style=>"width: #{num*7}px; background:black; color: white; font-size: 10px; height: 1em; text-align: right; padding: 5px;" } 
+      .count{:style=>"width: #{num*7}px;"} 
         = num
+      .count{:style=>"width: #{ds_count*7}px;"}
+        = ds_count
+      .count{:style=>"width: #{avg_ds*7}px;"}
+        = avg_ds
 - myAudit.json_obj.each_with_index do |superset, index|
   .supset{:id=>"#{index}"}
     %a.highlight.expand{:href=>"javascript:toggleDiv('#{'s'+index.to_s}');"} expand

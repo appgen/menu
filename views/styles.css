@@ -76,3 +76,12 @@ h1 {
 .row-fluid [class*="span"]:first-child {
   margin-left: 0;
 }
+
+.count {
+  background:black;
+  color: white;
+  font-size: 10px;
+  height: 1em;
+  text-align: right;
+  padding: 5px;
+}

@@ -24,6 +24,16 @@ class Audit
     return depts
   end
 
+  def datasets(dept)
+    count = 0;
+    @json_obj.each do |superset|
+      if superset["datasets"][0]["attribution"] == dept
+        count = count + 1
+      end
+    end
+    return count
+  end
+
   private
 
   def self.load_file

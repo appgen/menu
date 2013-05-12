@@ -176,3 +176,12 @@ section {
 .set {
   font-weight: 800;
 }
+
+.count {
+  background:black;
+  color: white;
+  font-size: 10px;
+  height: 1em;
+  text-align: right;
+  padding: 5px;
+}
