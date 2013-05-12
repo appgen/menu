@@ -17,9 +17,10 @@
   %ul
   %h2.subtitle Offending Depts
   -myAudit.departments.each do |dept, num|
-    %li{:style=>"border: 1px;"}
+    %li
       = dept
-      %div.count{:style=>"width: #{num*5}px; background:black; color: black;" } .
+      %div.count{:style=>"width: #{num*7}px; background:black; color: white; font-size: 10px; height: 1em; text-align: right; padding: 5px;" } 
+        = num
 - myAudit.json_obj.each_with_index do |superset, index|
   .supset{:id=>"#{index}"}
     %a.highlight.expand{:href=>"javascript:toggleDiv('#{'s'+index.to_s}');"} expand
