@@ -16,16 +16,17 @@
 %section 
   %ul
   %h2.subtitle Offending Depts
-  -myAudit.departments.each do |dept, num|
-    - ds_count = myAudit.datasets(dept)
+  -myAudit.depts.each do |dept|
+    - superset_count = myAudit.count_supersets(dept)
+    - dataset_count = myAudit.count_datasets(dept)
     - avg_ds = 1
-    - avg_ds = num / ds_count unless ds_count == 0
+    - avg_ds = dataset_count/ superset_count unless dataset_count == 0
     %li
       = dept
-      .count{:style=>"width: #{num*7}px;"} 
-        = num
-      .count{:style=>"width: #{ds_count*7}px;"}
-        = ds_count
+      .count{:style=>"width: #{dataset_count*7}px;"} 
+        = dataset_count
+      .count{:style=>"width: #{superset_count*7}px;"}
+        = superset_count
       .count{:style=>"width: #{avg_ds*7}px;"}
         = avg_ds
 - myAudit.json_obj.each_with_index do |superset, index|

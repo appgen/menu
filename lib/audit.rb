@@ -1,5 +1,5 @@
 class Audit
-  attr_accessor :json_obj
+  attr_accessor :json_obj, :depts
 
   def self.load
     Audit.new()
@@ -8,24 +8,28 @@ class Audit
   def initialize
     json_txt = Audit.load_file
     @json_obj = MultiJson.decode(json_txt)
+    @depts = []
+    @json_obj.each do |superset|
+      if !@depts.index(superset["datasets"][0]["attribution"])
+        @depts.push(superset["datasets"][0]["attribution"])
+      end
+    end
   end
 
-  def departments
-    depts = Hash.new
+  def count_datasets(dept)
+    count = 0
     @json_obj.each do |superset|
       superset["datasets"].each do |set|
-        if depts.include?(set["attribution"])
-          depts[set["attribution"]] = depts[set["attribution"]] + 1
-        else
-          depts[set["attribution"]] = 1
+        if set["attribution"] == dept
+          count = count + 1
         end
       end
     end
-    return depts
+    return count
   end
 
-  def datasets(dept)
-    count = 0;
+  def count_supersets(dept)
+    count = 0
     @json_obj.each do |superset|
       if superset["datasets"][0]["attribution"] == dept
         count = count + 1
