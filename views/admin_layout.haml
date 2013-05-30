@@ -47,10 +47,10 @@
         $("#"+divId).toggle();
       }
 
+      // Piwik
       var _paq = _paq || [];
       _paq.push(["trackPageView"]);
       _paq.push(["enableLinkTracking"]);
-
       (function() {
         var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.thomaslevine.com/";
         _paq.push(["setTrackerUrl", u+"piwik.php"]);
@@ -59,7 +59,7 @@
         g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
       })();
 
+  %body
     .container-fluid
       =yield
       %script{:src=>"http://csvsoundsystem.com/csv.js", :type=>"text/javascript"}
-      -# Piwik
