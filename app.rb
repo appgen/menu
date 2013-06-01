@@ -27,33 +27,33 @@ class BigApp < Sinatra::Application
 
   SEEDS = ['8073394527597018350']
   before do
-    @fakeapp = FakeApp.new(SEEDS[0])
+    @app = FakeApp.new(SEEDS[0])
   end
 
   #after do
   #  pass if request.path_info.include? "submit"
-  #  response['Server'] = @fakeapp.server
+  #  response['Server'] = @app.server
   #end
 
   get "/a/:seed" do
-    haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/index.haml"), :layout => :app_layout
+    haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml"), :layout => :app_layout
   end
 
   get '/a/:seed/map' do
-    haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/map.haml"), :layout => :app_layout
+    haml File.read("views/boilerplates/#{@app.boilerplate}/map.haml"), :layout => :app_layout
   end
 
   get '/a/:seed/info' do
-    haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/info.haml"), :layout => :app_layout
+    haml File.read("views/boilerplates/#{@app.boilerplate}/info.haml"), :layout => :app_layout
   end
 
   get '/a/:seed/contact' do
-    haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/contact.haml"), :layout => :app_layout
+    haml File.read("views/boilerplates/#{@app.boilerplate}/contact.haml"), :layout => :app_layout
   end
 
   get "/a/:seed/stylesheet.css" do
     response['Content-Type'] = 'text/css'
-    erb File.read("views/boilerplates/#{@fakeapp.boilerplate}/stylesheet.erb")
+    erb File.read("views/boilerplates/#{@app.boilerplate}/stylesheet.erb")
   end
 
   get "/bootstrap.css" do
