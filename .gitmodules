@@ -1,3 +1,0 @@
-[submodule "comestibles"]
-	path = comestibles
-	url = git://github.com/appgen/cache-comestibles.git
