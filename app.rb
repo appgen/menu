@@ -35,23 +35,23 @@ class BigApp < Sinatra::Application
   #  response['Server'] = @app.server
   #end
 
-  get "/a/:seed" do
+  get "/a" do
     haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml"), :layout => :app_layout
   end
 
-  get '/a/:seed/map' do
+  get '/a/map' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/map.haml"), :layout => :app_layout
   end
 
-  get '/a/:seed/info' do
+  get '/a/info' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/info.haml"), :layout => :app_layout
   end
 
-  get '/a/:seed/contact' do
+  get '/a/contact' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/contact.haml"), :layout => :app_layout
   end
 
-  get "/a/:seed/stylesheet.css" do
+  get "/a/stylesheet.css" do
     response['Content-Type'] = 'text/css'
     erb File.read("views/boilerplates/#{@app.boilerplate}/stylesheet.erb")
   end
