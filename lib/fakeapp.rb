@@ -31,10 +31,10 @@ class FakeApp
   FOUNDATIONTHEME = ["default", "evergreen", "coffeenmilk", "bladesofsteel"]
 
   def initialize
+
+    # Aesthetic
     @boilerplate = BOILERPLATES.sample
-    @data = Comestible.new('8073394527597018350')
     #@server = SERVERS.sample
-    @subjects = self.getSubjects
     @tile_set = TILE_LAYERS.sample
     @@current_app = self
     @zooms = (ZOOMS.sample 2).sort
@@ -45,6 +45,24 @@ class FakeApp
     @bootstraptheme = BOOTSTRAPTHEME.sample
     @kendotheme = KENDOTHEME.sample
     @foundationtheme = FOUNDATIONTHEME.sample
+
+    # Data file
+    @seed = '8073394527597018350'
+    basename = File.join('comestibles', seed)
+    metadata = MultiJson.decode(File.open("#{basename}.json", 'r').read)
+
+    # Pre-aggregated data stuff
+    @name = metadata['name']
+    @collabfinder_need = metadata['collabfinder_need'],
+    @collabfinder_what = metadata['collabfinder_what'],
+    @collabfinder_why = metadata['collabfinder_why'],
+    @combined_title = metadata['combined_title'],
+    @keywords = metadata['keywords']
+
+    # Source datasets
+    @sources = metadata['sources'],
+    @source_ids = @sources.map { |view| view['id'] }
+
   end 
 
   def self.current_app
