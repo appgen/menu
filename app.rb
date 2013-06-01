@@ -25,15 +25,9 @@ class BigApp < Sinatra::Application
     set :public_folder, 'public'
   end
 
+  SEEDS = ['8073394527597018350']
   before do
-    pass if request.path_info.include? "submit"
-    @seed = if params[:seed]
-      params[:seed].to_i
-    else
-      rand(10000)
-    end
-    srand(@seed)
-    @fakeapp = FakeApp.new
+    @fakeapp = FakeApp.new(SEEDS[0])
   end
 
   #after do
@@ -41,23 +35,23 @@ class BigApp < Sinatra::Application
   #  response['Server'] = @fakeapp.server
   #end
 
-  get '/a' do
+  get "/a/:seed" do
     haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/index.haml"), :layout => :app_layout
   end
 
-  get '/a/map' do
+  get '/a/:seed/map' do
     haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/map.haml"), :layout => :app_layout
   end
 
-  get '/a/info' do
+  get '/a/:seed/info' do
     haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/info.haml"), :layout => :app_layout
   end
 
-  get '/a/contact' do
+  get '/a/:seed/contact' do
     haml File.read("views/boilerplates/#{@fakeapp.boilerplate}/contact.haml"), :layout => :app_layout
   end
 
-  get "/a/stylesheet.css" do
+  get "/a/:seed/stylesheet.css" do
     response['Content-Type'] = 'text/css'
     erb File.read("views/boilerplates/#{@fakeapp.boilerplate}/stylesheet.erb")
   end

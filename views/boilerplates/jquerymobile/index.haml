@@ -1,5 +1,5 @@
 .hero-unit  
-  %h1#logo #{@app.name}
+  %h1#logo #{@fakeapp.name}
   %h2  
     = Thesaurus.getSentences(1)
   %p
@@ -7,8 +7,8 @@
     %a{:class=>"btn btn-primary btn-large"} Check out the Data!
 %div{:data=>{:role=>"content"}}
   .span4
-    %a{:data=>{:role=>"button", :icon=>"star", :theme=>"#{@app.jquerytheme}"}, :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+    %a{:data=>{:role=>"button", :icon=>"star", :theme=>"#{@fakeapp.jquerytheme}"}, :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .span4  
-    %a{:data=>{:role=>"button", :theme=>"#{@app.jquerytheme}"}, :href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %a{:data=>{:role=>"button", :theme=>"#{@fakeapp.jquerytheme}"}, :href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
   .span4
-    %a{:data=>{:role=>"button", :theme=>"#{@app.jquerytheme}"}, :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %a{:data=>{:role=>"button", :theme=>"#{@fakeapp.jquerytheme}"}, :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}

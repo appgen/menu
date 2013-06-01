@@ -31,7 +31,9 @@ class FakeApp
   KENDOTHEME = ["black", "blueopal", "bootstrap", "default", "highcontrast", "metro", "metroblack", "moonlight", "rtl", "silver", "uniform"]
   FOUNDATIONTHEME = ["default", "evergreen", "coffeenmilk", "bladesofsteel"]
 
-  def initialize
+  def initialize(seed)
+    @seed = seed
+    # To do: Set the seed here
 
     # Aesthetic
     @boilerplate = BOILERPLATES.sample
@@ -48,7 +50,6 @@ class FakeApp
     @foundationtheme = FOUNDATIONTHEME.sample
 
     # Data file
-    @seed = '8073394527597018350'
     basename = File.join('comestibles', @seed)
     metadata = MultiJson.decode(File.open("#{basename}.json", 'r').read)
 
