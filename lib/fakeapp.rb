@@ -3,8 +3,6 @@ class FakeApp
 
   attr_accessor :name, :dataset, :font, :server, :zooms, :boilerplate, :tile_set, :navbar, :jquerytheme, :colors, :bootstraptheme, :kendotheme, :foundationtheme
 
-  PREFIXES = ["responsive", "game", "beta", "tech", "digital", "social", "my", "our", "the", "all", "in", "on"]
-  SUFFIXES = ["box", "grid", "share", "wise", "hop", "works", "bit", "book", "list", "square", "rock", ".ly", "sy", "er", ".it", "ie", ".io", ".am", "ia", "ora", "ero", "ist", "ism", "ium", "ble", "ify", "ous", "ing"]
   TILE_LAYERS = ["'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'OpenStreetMap'}",
                   "'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {subdomains: '1234', type: 'osm', attribution: 'MapQuestOpen'}",
                   "'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {subdomains: '1234', type: 'sat', attribution: 'MapQuestOpen'}",
@@ -34,10 +32,9 @@ class FakeApp
 
   def initialize
     @boilerplate = BOILERPLATES.sample
-    @dataset = Dataset.load_random
+    @data = Comestible.new('8073394527597018350')
     #@server = SERVERS.sample
     @subjects = self.getSubjects
-    @name = self.getRandomName
     @tile_set = TILE_LAYERS.sample
     @@current_app = self
     @zooms = (ZOOMS.sample 2).sort
@@ -52,23 +49,6 @@ class FakeApp
 
   def self.current_app
     @@current_app
-  end
-
-  def getSubjects
-    subjects = self.dataset.json_obj["tags"]
-    #remove tags that refer to 
-    subjects.each do |s|
-      subjects.delete(s) if s.include? "do"
-    end
-    subjects
-  end
-
-  def getRandomName
-    if rand > 0.7
-      PREFIXES.sample + @subjects.sample
-    else
-      @subjects.sample + SUFFIXES.sample
-    end
   end
 
   def getRandomColor
