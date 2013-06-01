@@ -1,9 +1,14 @@
-- @about_page = AboutPresenter.new(@app.dataset)
 %header
   .row-fluid
     %a.left{:href=>"/"}  
       %h1 AppGen
     %a.btn.btn-reset.right{:href=>""} Gimme another!
-  %p <strong>Dataset Description:</strong> #{@about_page.getDataDescription}
-  
-%iframe#frame{:src=>"/a"}
+#main
+  %iframe#app-frame{:src => "/a", :height => "600"}
+  #app-description
+    %h3 #{@fakeapp.name}
+    %p #{@fakeapp.collabfinder_what}
+    %p It is based on the following datasets.
+    %ul
+      - @fakeapp.sources.each do |dataset|
+        %li <a href="https://data.cityofnewyork.us/-/-/#{dataset['id']}">#{dataset['name']}</a>: #{dataset['description']}

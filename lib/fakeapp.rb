@@ -1,7 +1,8 @@
 class FakeApp 
   @@current_app = nil
 
-  attr_accessor :name, :dataset, :font, :server, :zooms, :boilerplate, :tile_set, :navbar, :jquerytheme, :colors, :bootstraptheme, :kendotheme, :foundationtheme
+  attr_accessor :font, :server, :zooms, :boilerplate, :tile_set, :navbar, :jquerytheme, :colors, :bootstraptheme, :kendotheme, :foundationtheme,
+                :name, :collabfinder_need, :collabfinder_what, :collabfinder_why, :combined_title, :keywords, :sources, :source_ids
 
   TILE_LAYERS = ["'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'OpenStreetMap'}",
                   "'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {subdomains: '1234', type: 'osm', attribution: 'MapQuestOpen'}",
@@ -48,19 +49,19 @@ class FakeApp
 
     # Data file
     @seed = '8073394527597018350'
-    basename = File.join('comestibles', seed)
+    basename = File.join('comestibles', @seed)
     metadata = MultiJson.decode(File.open("#{basename}.json", 'r').read)
 
     # Pre-aggregated data stuff
     @name = metadata['name']
-    @collabfinder_need = metadata['collabfinder_need'],
-    @collabfinder_what = metadata['collabfinder_what'],
-    @collabfinder_why = metadata['collabfinder_why'],
-    @combined_title = metadata['combined_title'],
+    @collabfinder_need = metadata['collabfinder_need']
+    @collabfinder_what = metadata['collabfinder_what']
+    @collabfinder_why = metadata['collabfinder_why']
+    @combined_title = metadata['combined_title']
     @keywords = metadata['keywords']
 
     # Source datasets
-    @sources = metadata['sources'],
+    @sources = metadata['sources']
     @source_ids = @sources.map { |view| view['id'] }
 
   end 

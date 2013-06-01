@@ -4,10 +4,9 @@
   text-align: right; 5815812
 }
 
-iframe {
-  height: 100%;
+#frame {
+  height: 600px;
   width: 100%;
-  margin-top: 180px;
 }
 
 .funnybutton {
@@ -129,10 +128,8 @@ h1 {
 }
 
 header {
-  position: absolute;
   width: 100%;
   background: black;
-  top: 0;
   margin: 0 -20px;
   height: 120px;
   line-height: 1em;
@@ -184,4 +181,16 @@ section {
   height: 1em;
   text-align: right;
   padding: 5px;
+}
+
+#app-frame, #app-description {
+  width: 44%;
+  padding: 3%;
+  margin: 0;
+  border: 0;
+  float: left;
+}
+
+#main {
+  width: 100%;
 }
