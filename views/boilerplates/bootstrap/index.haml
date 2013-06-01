@@ -1,27 +1,28 @@
 = partial("views/boilerplates/bootstrap/_nav.haml")
 .hero-unit  
-  %h1#logo #{@app.name}
+  %h1#logo 
+    =@app.name
   %h2 
-    = Thesaurus.getSentences(1)
-  %p 
-    = Thesaurus.getSentences(3)
+    =@app.combined_title
   %p
     %a{:class=>"btn btn-primary btn-large"} Check out the Data!
 .navi
 .row-fluid
   .span4
     %h4
-      = Thesaurus.getSentences(1)
+      = @app.keywords.sample
     %p 
-      = Thesaurus.getSentences(3)
+      = @app.collabfinder_what
     %a{:class=>"btn btn-primary", :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .span4  
     %h4
-      = Thesaurus.getSentences(1)
+      = @app.keywords.sample
     %p 
-      = Thesaurus.getSentences(4)
+      = @app.collabfinder_why
     %a{:class=>"btn btn-primary", :href=>"/a/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
   .span4
+    %h4
+      = @app.keywords.sample
     %p 
-      = Thesaurus.getSentences(3)
+      = @app.collabfinder_need
     %a{:class=>"btn btn-info", :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}

@@ -1,15 +1,15 @@
-- @about_page = AboutPresenter.new(@app.dataset)
 %div{:data=>{:role=>"header", :theme=>"#{@app.jquerytheme}"}}
   %a{:href=>"/a?seed=#{@seed}"} Home
   %h1#logo #{@app.name}
 %h1 about us
-%p #{@about_page.getDataDescription}
 %p
-  =Thesaurus::getParagraphs(1)
+  =@app.description
 %p
-  =Thesaurus::getParagraphs(1)
+  =@app.collabfinder_what
 %p
-  =Thesaurus::getSentences(1)
+  =@app.collabfinder_why
+%p
+  =@app.collabfinder_need
 %div{:data=>{:role=>"footer", :theme=>"#{@app.jquerytheme}"}}
   %div{:data=>{:role=>"navbar", :theme=>"#{@app.jquerytheme}"}}
     %ul

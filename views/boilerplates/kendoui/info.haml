@@ -1,7 +1,14 @@
 - @about_page = AboutPresenter.new(@app.dataset)
 = partial("views/boilerplates/kendoui/_nav.haml")
 %h1 about us
-%p #{@about_page.getDataDescription}
+%p
+  =@app.description
+%p
+  =@app.collabfinder_what
+%p
+  =@app.collabfinder_why
+%p
+  =@app.collabfinder_need
 %div{:data=>{:role=>"footer"}}
   %div{:data=>{:role=>"tabstrip"}}
     %a{:href=>"/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
