@@ -33,7 +33,7 @@ class FakeApp
 
   def initialize(seed)
     @seed = seed
-    # To do: Set the seed here
+    srand(@seed.to_i) # set seed
 
     # Aesthetic
     @boilerplate = BOILERPLATES.sample
