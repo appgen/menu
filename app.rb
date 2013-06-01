@@ -25,8 +25,8 @@ class BigApp < Sinatra::Application
     set :public_folder, 'public'
   end
 
-  SEEDS = ['8073394527597018350']
   before do
+    SEEDS = ['8073394527597018350']
     @app = FakeApp.new(SEEDS[0])
   end
 
