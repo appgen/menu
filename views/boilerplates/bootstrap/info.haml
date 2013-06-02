@@ -1,10 +1,8 @@
 = partial("views/boilerplates/bootstrap/_nav.haml")
-%h1 about us
-%p
-  =@app.description
+%h1 about #{@app.name}
 %p
   =@app.collabfinder_what
-%p
-  =@app.collabfinder_why
-%p
-  =@app.collabfinder_need
+%p #{@app.name} is based on the following datasets.
+%ul
+  - @app.sources.each do |dataset|
+    %li <a href="https://data.cityofnewyork.us/-/-/#{dataset['id']}">#{dataset['name']}</a>: #{dataset['description']}
