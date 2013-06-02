@@ -1,7 +1,6 @@
-- @about_page = AboutPresenter.new(@app.dataset)
 = partial("views/boilerplates/foundation/_nav.haml")
 %h1 #{Thesaurus::CONTACT.sample.capitalize}
-%p Do you #{Thesaurus::CARE.sample} #{@about_page.getDataTag}? Do you #{Thesaurus::CARE.sample} #{@about_page.getDataTag}? You should tell your congressman about it. The data is striking and the government needs to know!
+%p Do you #{Thesaurus::CARE.sample} #{@app.getKeyword}? Do you #{Thesaurus::CARE.sample} #{@app.getKeyword}? You should tell your congressman about it. The data is striking and the government needs to know!
 .row
   .congressman.large-4.panel.columns
     %p Your local congress man is 

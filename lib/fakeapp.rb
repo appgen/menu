@@ -78,4 +78,8 @@ class FakeApp
     [color1, color2, color3]
   end
 
+  def getKeyword
+    @keywords.sample
+  end
+
 end
