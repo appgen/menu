@@ -3,7 +3,6 @@
   :javascript
     var map = L.map('map');
     map.locate({setView: true, minZoom: #{@app.zooms[0]}, maxZoom: #{@app.zooms[1]}});
-    var data = #{open(@app.geojson).read}
 
     function onLocationFound(e) {
       var radius = e.accuracy / 2;
@@ -23,9 +22,11 @@
 
     L.tileLayer(#{@app.tile_set}).addTo(map);
 
-    L.geoJson(data,
-             {onEachFeature: onEachFeature}
-    ).addTo(map);
+    $.get(#{@app.geojson}, function(data) {
+      L.geoJson(data,
+        {onEachFeature: onEachFeature}
+      ).addTo(map)
+    })
 %div{:data=>{:role=>"footer"}}
   %div{:data=>{:role=>"tabstrip"}}
     %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
