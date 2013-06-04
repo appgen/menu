@@ -1,0 +1,5 @@
+* GeoJSON should be loaded from S3 with a script tag.
+* Metadata should be loaded from S3.
+* It would be sort of nice if the @seed could go in the main url rather than the query string.
+* Deploy apps and submit them.
+* People should be able to claim apps.
