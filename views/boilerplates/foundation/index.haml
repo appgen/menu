@@ -2,7 +2,7 @@
 .panel.callout
   %h1#logo #{@app.name}
   %h2.subheader 
-    = Thesaurus.getSentences(1)
+    = @app.keywords.sample
   %a{:class=>"large button round success"} Check out the Data!
 .row
   .small-4.columns.panel
