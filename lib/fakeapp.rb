@@ -38,7 +38,7 @@ class FakeApp
 
     # Aesthetic
     @boilerplate = BOILERPLATES.sample
-    #@server = SERVERS.sample
+    @server = SERVERS.sample
     @tile_set = TILE_LAYERS.sample
     @@current_app = self
     @zooms = (ZOOMS.sample 2).sort
