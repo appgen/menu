@@ -3,3 +3,6 @@
 * It would be sort of nice if the @seed could go in the main url rather than the query string.
 * Deploy apps and submit them.
 * People should be able to claim apps.
+* Add other Socrata portals
+  * https://data.ny.gov/browse
+  * https://explore.data.gov/browse
