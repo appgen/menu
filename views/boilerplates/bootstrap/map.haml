@@ -1,10 +1,9 @@
-- @map_page = MapPresenter.new(@app.dataset)
 = partial("views/boilerplates/bootstrap/_nav.haml")
 #map
   :javascript
     var map = L.map('map');
     map.locate({setView: true, minZoom: #{@app.zooms[0]}, maxZoom: #{@app.zooms[1]}});
-    var data = #{@map_page.leaflet_geojson}
+    var data = #{open(@app.geojson).read}
 
     function onLocationFound(e) {
       var radius = e.accuracy / 2;
