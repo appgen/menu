@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
 require 'erb'
+require 'open-uri'
 
 Bundler.require
 
@@ -29,7 +30,7 @@ class BigApp < Sinatra::Application
     if params[:seed]
       seed = params[:seed]
     else
-      SEEDS = ['8073394527597018350']
+      SEEDS = MultiJson.decode(open('http://comestibles.appgen.me/index.json').read)
       seed = SEEDS.sample
     end
     @app = FakeApp.new(seed)
