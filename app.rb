@@ -35,19 +35,19 @@ class BigApp < Sinatra::Application
   #  response['Server'] = @app.server
   #end
 
-  get "/a" do
+  get "/a/?" do
     haml File.read("views/boilerplates/#{@app.boilerplate}/index.haml"), :layout => :app_layout
   end
 
-  get '/a/map' do
+  get '/a/map/?' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/map.haml"), :layout => :app_layout
   end
 
-  get '/a/info' do
+  get '/a/info/?' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/info.haml"), :layout => :app_layout
   end
 
-  get '/a/contact' do
+  get '/a/contact/?' do
     haml File.read("views/boilerplates/#{@app.boilerplate}/contact.haml"), :layout => :app_layout
   end
 
@@ -64,15 +64,15 @@ class BigApp < Sinatra::Application
     haml :splash, :layout => :admin_layout
   end
 
-  get "/browse" do
+  get "/browse/?" do
     haml :browse, :layout => :admin_layout
   end
 
-  get "/audit" do
+  get "/audit/?" do
     haml :audit, :layout => :admin_layout
   end
 
-  get "/audit/report" do
+  get "/audit/report/?" do
     haml :report, :layout => :admin_layout
   end
 
