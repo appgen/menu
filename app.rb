@@ -26,8 +26,13 @@ class BigApp < Sinatra::Application
   end
 
   before do
-    SEEDS = ['8073394527597018350']
-    @app = FakeApp.new(SEEDS[0])
+    if params[:seed]
+      seed = params[:seed]
+    else
+      SEEDS = ['8073394527597018350']
+      seed = SEEDS.sample
+    end
+    @app = FakeApp.new(seed)
   end
 
   #after do
