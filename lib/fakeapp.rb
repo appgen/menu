@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class FakeApp 
   attr_accessor :font, :server, :zooms, :boilerplate, :tile_set, :navbar, :jquerytheme, :colors, :bootstraptheme, :kendotheme, :foundationtheme,
                 :name, :collabfinder_need, :collabfinder_what, :collabfinder_why, :combined_title, :keywords, :sources, :source_ids,
@@ -48,13 +50,16 @@ class FakeApp
     @foundationtheme = FOUNDATIONTHEME.sample
 
     # Data file
-    basename = File.join('comestibles', @seed)
-    metadata = MultiJson.decode(File.open("#{basename}.json", 'r').read)
+    # basename = File.join('comestibles', @seed)
+    basename = 'http://comestibles.appgen.me/' + @seed
 
     # File paths
     @csv = basename + '.csv'
     @json = basename + '.json'
     @geojson = basename + '.geojson'
+
+    # Data-based app parameters
+    metadata = MultiJson.decode(open("#{basename}.json").read)
 
     # Pre-aggregated data stuff
     @name = metadata['name']
