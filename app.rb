@@ -9,6 +9,8 @@ Dir.glob('./lib/*.rb') do |model|
   require model
 end
 
+SEEDS = MultiJson.decode(open('http://comestibles.appgen.me/index.json').read)
+
 class BigApp < Sinatra::Application
 
   configure do
@@ -30,7 +32,6 @@ class BigApp < Sinatra::Application
     if params[:seed]
       seed = params[:seed]
     else
-      SEEDS = MultiJson.decode(open('http://comestibles.appgen.me/index.json').read)
       seed = SEEDS.sample
     end
     @app = FakeApp.new(seed)
