@@ -1,9 +1,9 @@
 .hero-unit  
   %h1#logo #{@app.name}
   %h2  
-    = Thesaurus.getSentences(1)
-  %p
-    = Thesaurus.getSentences(3)
+    = @app.keywords.sample
+  %p 
+    = @app.collabfinder_what
     %a{:class=>"btn btn-primary btn-large"} Check out the Data!
 %div{:data=>{:role=>"content"}}
   .span4

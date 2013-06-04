@@ -7,19 +7,19 @@
 .row
   .small-4.columns.panel
     %h4
-      = Thesaurus.getSentences(1)
+      = @app.keywords.sample
     %p 
-      = Thesaurus.getSentences(3)
+      = @app.collabfinder_what
     %a{:class=>"button", :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .small-4.columns.panel
     %h4
-      = Thesaurus.getSentences(1)
+      = @app.keywords.sample
     %p 
-      = Thesaurus.getSentences(3)
+      = @app.collabfinder_why
     %a{:class=>"button", :href=>"/a/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
   .small-4.columns.panel
     %h4
-      = Thesaurus.getSentences(1)
+      = @app.keywords.sample
     %p 
-      = Thesaurus.getSentences(3)
+      = @app.collabfinder_need
     %a{:class=>"button", :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
