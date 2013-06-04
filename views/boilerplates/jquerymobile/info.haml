@@ -1,5 +1,5 @@
 %div{:data=>{:role=>"header", :theme=>"#{@app.jquerytheme}"}}
-  %a{:href=>"/a?seed=#{@seed}"} Home
+  %a{:href=>"/a?seed=#{@app.seed}"} Home
   %h1#logo about #{@app.name}
   %p
     =@app.collabfinder_what
@@ -11,8 +11,8 @@
   %div{:data=>{:role=>"navbar", :theme=>"#{@app.jquerytheme}"}}
     %ul
       %li
-        %a{:href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+        %a{:href=>"/a/info?seed=#{@app.seed}"} #{Thesaurus::ABOUT.sample.capitalize}
       %li
-        %a{:href=>"/a/contact?seed=#{@seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+        %a{:href=>"/a/contact?seed=#{@app.seed}"} #{Thesaurus::CONTACT.sample.capitalize}
       %li
-        %a{:href=>"/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+        %a{:href=>"/a/map?seed=#{@app.seed}"} #{Thesaurus::VIEW.sample.capitalize} Map

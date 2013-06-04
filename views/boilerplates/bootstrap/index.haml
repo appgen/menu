@@ -13,16 +13,16 @@
       = @app.keywords.sample
     %p 
       = @app.collabfinder_what
-    %a{:class=>"btn btn-primary", :href=> "/a/map?seed=#{@seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+    %a{:class=>"btn btn-primary", :href=> "/a/map?seed=#{@app.seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .span4  
     %h4
       = @app.keywords.sample
     %p 
       = @app.collabfinder_why
-    %a{:class=>"btn btn-primary", :href=>"/a/contact?seed=#{@app}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %a{:class=>"btn btn-primary", :href=>"/a/contact?seed=#{@app.seed}"} #{Thesaurus::CONTACT.sample.capitalize}
   .span4
     %h4
       = @app.keywords.sample
     %p 
       = @app.collabfinder_need
-    %a{:class=>"btn btn-info", :href=>"/a/info?seed=#{@seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %a{:class=>"btn btn-info", :href=>"/a/info?seed=#{@app.seed}"} #{Thesaurus::ABOUT.sample.capitalize}
