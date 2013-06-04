@@ -36,7 +36,7 @@ class BigApp < Sinatra::Application
   end
 
   after do
-    response.headers['Server'] = @app.server
+  # response.headers['Server'] = @app.server
   end
 
   get "/a/?" do
