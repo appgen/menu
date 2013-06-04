@@ -22,7 +22,7 @@
 
     L.tileLayer(#{@app.tile_set}).addTo(map);
 
-    $.get(#{@app.geojson}, function(data) {
+    $.get('#{@app.geojson}', function(data) {
       L.geoJson(data,
         {onEachFeature: onEachFeature}
       ).addTo(map)
