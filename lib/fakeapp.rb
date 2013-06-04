@@ -3,7 +3,7 @@ class FakeApp
 
   attr_accessor :font, :server, :zooms, :boilerplate, :tile_set, :navbar, :jquerytheme, :colors, :bootstraptheme, :kendotheme, :foundationtheme,
                 :name, :collabfinder_need, :collabfinder_what, :collabfinder_why, :combined_title, :keywords, :sources, :source_ids,
-                :csv, :json, :geojson
+                :seed, :csv, :json, :geojson
 
   TILE_LAYERS = ["'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'OpenStreetMap'}",
                   "'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {subdomains: '1234', type: 'osm', attribution: 'MapQuestOpen'}",
