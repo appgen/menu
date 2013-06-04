@@ -1,6 +1,4 @@
 class FakeApp 
-  @@current_app = nil
-
   attr_accessor :font, :server, :zooms, :boilerplate, :tile_set, :navbar, :jquerytheme, :colors, :bootstraptheme, :kendotheme, :foundationtheme,
                 :name, :collabfinder_need, :collabfinder_what, :collabfinder_why, :combined_title, :keywords, :sources, :source_ids,
                 :seed, :csv, :json, :geojson
@@ -40,7 +38,6 @@ class FakeApp
     @boilerplate = BOILERPLATES.sample
     @server = SERVERS.sample
     @tile_set = TILE_LAYERS.sample
-    @@current_app = self
     @zooms = (ZOOMS.sample 2).sort
     @font = FONTS.sample
     @navbar = "navbar " + NAV.sample
@@ -70,11 +67,6 @@ class FakeApp
     # Source datasets
     @sources = metadata['sources']
     @source_ids = @sources.map { |view| view['id'] }
-
-  end 
-
-  def self.current_app
-    @@current_app
   end
 
   def getRandomColor
