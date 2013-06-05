@@ -4,7 +4,7 @@
     = @app.keywords.sample
   %p 
     = @app.collabfinder_what
-    %a{:class=>"btn btn-primary btn-large" :href=>"map?seed=#{@app.seed}"} Check out the Data!
+    %a{:class=>"btn btn-primary btn-large", :href=>"map?seed=#{@app.seed}"} Check out the Data!
 %div{:data=>{:role=>"content"}}
   .span4
     %a{:data=>{:role=>"button", :icon=>"star", :theme=>"#{@app.jquerytheme}"}, :href=> "map?seed=#{@app.seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
