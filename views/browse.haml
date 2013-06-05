@@ -4,9 +4,11 @@
       %h1 AppGen
     %a.btn.btn-reset.right{:href=>""} Gimme another!
 #main
-  %iframe#app-frame{:src => "/a", :height => "600"}
+  %iframe#app-frame{:src => "/a?seed=#{@app.seed}", :height => "600"}
   #app-description
-    %h3 #{@app.name}
+    %h3
+      %a{:href => "/a?seed=#{@app.seed}"}
+        = @app.name
     %p #{@app.collabfinder_what}
     %p It is based on the following datasets.
     %ul
