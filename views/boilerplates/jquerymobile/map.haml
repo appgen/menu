@@ -2,7 +2,8 @@
   %a{:href=>"/a?seed=#{@app.seed}"} Home
   %h1#logo #{@app.name}
 #map
-  :javascript
+:javascript
+  $(function(){
     var map = L.map('map');
     map.locate({setView: true, minZoom: #{@app.zooms[0]}, maxZoom: #{@app.zooms[1]}});
 
@@ -25,7 +26,8 @@
     L.tileLayer(#{@app.tile_set}).addTo(map);
 
     $.get('#{@app.geojson}', function(data) {
-      L.geoJson(data,
+      L.geoJson(JSON.parse(data),
         {onEachFeature: onEachFeature}
       ).addTo(map)
     })
+  })
