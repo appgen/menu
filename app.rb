@@ -35,6 +35,8 @@ class BigApp < Sinatra::Application
       seed = SEEDS.sample
     end
     @app = FakeApp.new(seed)
+    puts @app.seed
+    puts @app.boilerplate
   end
 
   after do
