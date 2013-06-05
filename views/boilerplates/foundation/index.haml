@@ -3,23 +3,23 @@
   %h1#logo #{@app.name}
   %h2.subheader 
     = @app.keywords.sample
-  %a{:class=>"large button round success", :href=>"/a/map?seed=#{@app.seed}"} Check out the Data!
+  %a{:class=>"large button round success", :href=>"map?seed=#{@app.seed}"} Check out the Data!
 .row
   .small-4.columns.panel
     %h4
       = @app.keywords.sample
     %p 
       = @app.collabfinder_what
-    %a{:class=>"button", :href=> "/a/map?seed=#{@app.seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
+    %a{:class=>"button", :href=> "map?seed=#{@app.seed}"} #{Thesaurus::VIEW.sample.capitalize} Map
   .small-4.columns.panel
     %h4
       = @app.keywords.sample
     %p 
       = @app.collabfinder_why
-    %a{:class=>"button", :href=>"/a/contact?seed=#{@app.seed}"} #{Thesaurus::CONTACT.sample.capitalize}
+    %a{:class=>"button", :href=>"contact?seed=#{@app.seed}"} #{Thesaurus::CONTACT.sample.capitalize}
   .small-4.columns.panel
     %h4
       = @app.keywords.sample
     %p 
       = @app.collabfinder_need
-    %a{:class=>"button", :href=>"/a/info?seed=#{@app.seed}"} #{Thesaurus::ABOUT.sample.capitalize}
+    %a{:class=>"button", :href=>"info?seed=#{@app.seed}"} #{Thesaurus::ABOUT.sample.capitalize}
