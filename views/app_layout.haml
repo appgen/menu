@@ -24,6 +24,7 @@
       %script{:src => "/js/vendor/zepto.js"}
       %script{:src => "/js/foundation/foundation.js"}
       %script{:src => "/js/foundation/foundation.topbar.js"}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => "/a/stylesheet.css?seed=#{@app.seed}"}
   %body
     - case @app.boilerplate
     - when "bootstrap"
